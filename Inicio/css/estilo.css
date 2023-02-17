@@ -1,0 +1,47 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.contenedor{
+    width: 500px;
+    height: 300px;
+    border: double blue 2px;
+    border-radius: 5px;
+    font-size: 30px;
+    text-align: center;
+    
+}
+
+.contenedor label{
+    display: block;
+    text-align: center;
+}
+
+.contenedor input{
+    display: inline-block; 
+    text-align: center;
+    width: 300px;
+    left: 20%;
+    position: relative;
+    margin: 4px;
+}
+
+[type = "button"]{
+  border: #c8c8c8 solid 1px;
+  background-color: #cbcbcb;
+  color: #000000;
+  border-radius: 30px;
+  transition: 1s background-color;
+}
+
+[type = "button"]:hover{
+  background-color: #1df592;
+}
+
+[type = "number"]{
+  border: #000000 1px solid;
+}
+
+#tabla{
+  font-size: 20px;
+}
