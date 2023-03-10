@@ -16,6 +16,12 @@ Estas son practicas que de JavaScript que realice en universidad Cesde
 
 - Mozilla (Documentación oficial): https://developer.mozilla.org/es/docs/Web/JavaScript
 
+### Enlaces adicionales
+
+**Camel Case**
+
+- https://www.neoguias.com/tipos-notacion-nombres/
+
 ## IDE o Editor de código utilizado
 
 Visual studio code
