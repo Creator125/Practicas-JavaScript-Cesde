@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones | Arreglos | Objetos</title>
+    <script src="js/funciones.js"></script>
+</head>
+<body>
+    <h1>Funciones, Arreglos y Objetos</h1>
+
+    <script>
+        /*
+        //Invocando la funcion que se encuentra el archivo funciones.js
+        //convertirMoneda(4700);
+        console.log(convertirMoneda(4700));
+        let pesos = convertirMoneda(200000);
+        let dolares = convertirMoneda(200000);
+        console.log(pesos);
+
+        /*
+        if(convertirMoneda(47000) >= 10){
+            console.log("Puedes comer sin preocupacion");
+        }else{
+            console.log("Toca comprar un mecato");
+        }
+        */
+        /*
+        //console.log(convertirMoneda(45000) >= 10 ? "Puedes busca algo de comer" : "Toca comprar un mecato");
+        console.log(dolares >= 10 ? `Con ${parseInt(dolares)} dolares puedes busca algo de comer` : "Toca comprar un mecato");
+        */
+
+        let cambio = convertirMoneda("cop", "usd", 200000);
+        console.log(parseInt(cambio));
+        cambio = convertirMoneda("usd", "cop", 42.555);
+        console.log(parseInt(cambio));
+        cambio = convertirMoneda("cop", "eur", 200000);
+        console.log(parseInt(cambio));
+        cambio = convertirMoneda("eur", "cop", 42.555);
+        console.log(parseInt(cambio));
+
+        //Usando las funciones flechas o animas
+        console.log(sumar(3,8));
+        let resulSuma = sumar2(9,5);
+        console.log(resulSuma);
+
+        console.log(sexo(true));
+        console.log(sexo(false))
+
+        let numero = 10;
+        console.log(`El numero ${numero} ${Numprimo(numero)}`);
+
+    </script>
+</body>
+</html>
