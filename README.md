@@ -22,6 +22,12 @@ Estas son practicas que de JavaScript que realice en universidad Cesde
 
 - https://www.neoguias.com/tipos-notacion-nombres/
 
+**Palabras reservadas**
+
+- https://programacionfacil.org/cursos/javascript/javascript_palabras_reservadas_identificadores_y_consola_capitulo_4.html
+
+- https://www.w3bai.com/es/js/js_reserved.html
+
 ## IDE o Editor de código utilizado
 
 Visual studio code
