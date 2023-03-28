@@ -5,6 +5,7 @@ let mensaje = document.querySelector("#mensaje");
 let idLibro = document.querySelector("#idLibro");
 let nombreLibro = document.querySelector("#nombreLibro");
 let genero = document.querySelector("#genero");
+let estado = document.getElementsByName("Estado")
 //Botones
 let btnagregar = document.querySelector('#btnagregar');
 let btnbuscar = document.querySelector('#btnbuscar');
@@ -12,16 +13,16 @@ let btnactualizar = document.querySelector('#btnactualizar');
 let btnlimpiar = document.querySelector('#btnlimpiar');
 
 //Evento de los botones
-//Botosn de agregar
+//Boton de agregar
 btnagregar.addEventListener("click",() => {
     //Verificar que todos los datos estan diligentes
     mensaje.classList.remove("alert-danger");
     mensaje.classList.add("d-none");
     //Agregar o quitar clases
     mensaje.classList.remove("d-none");
-    if(idLibro.value != "" && nombreLibro.value != "" && genero.value != ""){
+    if(idLibro.value != "" && nombreLibro.value != "" && genero.value != "" && estado.value != ""){
         //Verificar que la referecia no esxtita
-        let buscarlibro = libros.find(libro => libro.idLibro == idLibro.value);
+        let buscarlibro = libros.find(libro => libro.idLibro = idLibro.value);
 
         if(buscarlibro == undefined){ //No Encuentra el id
             //Algregar la clase alert-info
@@ -30,7 +31,8 @@ btnagregar.addEventListener("click",() => {
             libros.push({
                 Id: parseInt(idLibro.value),
                 Nombre: nombreLibro.value,
-                Genero: genero.value
+                Genero: genero.value,
+                Estado: estado.value
             });
             mensaje.textContent = "El Libro se ha agregado correctamente ...";
             //console.log(mensaje);
@@ -40,15 +42,30 @@ btnagregar.addEventListener("click",() => {
                 mensaje.classList.add("d-none");
             }, 5000);
         }else{ //Encontro el id
-            mensaje.classList.remove("d-nnone");
+            mensaje.classList.remove("d-none");
             mensaje.classList.add("alert-danger");
             mensaje.textContent = "El libro ya existe";
         }
    }else{
-        mensaje.classList.remove("d-nnone");
+        mensaje.classList.remove("d-none");
         mensaje.classList.add("alert-danger");
         mensaje.textContent = "Debes dilingeciar todos los datos";
    }
 
    console.log(libros);
 });
+
+//Boton de Actualizar
+btnactualizar.addEventListener("click", () => {
+    mensaje.classList.remove("alert-danger");
+    mensaje.classList.add("d-none");
+
+    mensaje.classList.remove("d-none");
+    mensaje.classList.add("alert-info");
+    mensaje.textContent = "El libro fue actualizado";
+});
+
+//Boton de buscar
+btnbuscar.addEventListener("click", () =>{
+    
+})
