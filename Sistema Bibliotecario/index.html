@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/icons/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Sistema bibliotecario</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema bibliotecario</h1>
+
+        <div class="alert d-none" role="alert" id="mensaje">
+            
+        </div>
+
+        <!-- Formulario -->
+        <form>
+            <div class="mb-3">
+                <label for="id">Id</label>
+                <input type="text" class="form-control" id="idLibro" name="id"
+                    placeholder="Ingrese el id del libro">
+            </div>
+            <div class="mb-3">
+                <label for="nombre">Nombre</label>
+                <input type="text" class="form-control" id="nombreLibro" name="nombre"
+                    placeholder="Ingrese el nombre del libro">
+            </div>
+            <div>
+              <label for="genero" id="genero">Genero</label>
+              <select name="genero" id="genero">
+                <option value="ciencia">Ciencia</option>
+                <option value="sociales">Sociales</option>
+                <option value="matematicas">Matematicas</option>
+              </select>  
+            </div>
+            <div class="">
+                <label for="estado">Esatado</label>
+                <div class="">
+                    <input type="radio" name="Estado" value="Disponible"><span>Disponible</span> 
+                </div>
+                <div>
+                    <input type="radio" name="Estado" value="No disponibles"><span> No disponibles</span> 
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="btnagregar">Agregar</button>
+            <button type="button" class="btn btn-secondary" id="btnbuscar">Buscar</button>
+            <button type="button" class="btn btn-success" id="btnactualizar">Actualizar</button>
+            <button type="button" class="btn btn-danger" id="btnlimpiar">Limpiar</button>
+        </form>
+
+        <!-- Archivos Js -->
+        <script src="js/bootstrap.js"></script>
+        <script src="js/libros.js"></script>
+    </div>
+</body>
+</html>
