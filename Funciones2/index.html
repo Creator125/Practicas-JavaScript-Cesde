@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funciones | Arreglos | Objetos</title>
     <script src="js/funciones.js"></script>
+    <script src="js/objetos.js"></script>
 </head>
 <body>
     <h1>Funciones, Arreglos y Objetos</h1>
@@ -50,6 +51,54 @@
 
         let numero = 10;
         console.log(`El numero ${numero} ${Numprimo(numero)}`);
+
+        //Objetos
+        console.log(estudiante); //Mostrar la informacion del objeto estudiante
+        console.log(`Nombre del estudiante: ${estudiante.nombre} y su salario es ${estudiante.salario} y el
+        el sexo es ${estudiante.genero ? "Masculino" : "Femenino"}`);
+
+        //Desetructurar  el objeto estudiante
+        const {indetificacion, nombre, genero, salario} = estudiante;
+
+        console.log(`Identificacion: ${indetificacion}`);
+
+        //Mostrar la informacion del objeto de arreglo users
+        console.log(users);
+
+        for (i = 0; i < users.length; i++) { //fot tradicional
+            console.log(users[i]);
+            
+        }
+
+        for(user of users){ //Usando for iterador
+            console.log(user.username);
+        }
+
+        console.log("Recorrido con forEach");
+        users.forEach(user => console.log(`Contraseña: ${user.password} usuario : ${user.username}`)); //Usando forEach
+
+        console.log("Recorrido con Map");
+        users.map(user => console.log(`Usuario: ${user.username}`)) //Usando Map
+
+        users.map(myuser => { //Usando condicionales en Map
+            if (myuser.password == "123"){
+                console.log("Contraseña encontrada ...");
+            }
+        })
+
+        console.log("Utilizando el metodo Find")
+        //Buscar un dato en el arreglo users
+        let encontro = users.find(user => user.username == "Marlon" && user.password == "103");
+        //Encontro queda con los datos del objeto encontrado o con la palabra undefine, si no lo encontro
+        /*
+        if(encontro != undefined){
+            console.log(`El usuario es: ${encontro.username}`)
+        }else{
+            console.log("Usuario no encontrado");
+        }
+        */
+
+        console.log(encontro != undefined ? `El usuario es: ${encontro.username}` : "Usuario no encontrado");
 
     </script>
 </body>

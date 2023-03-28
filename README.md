@@ -28,6 +28,14 @@ Estas son practicas que de JavaScript que realice en universidad Cesde
 
 - https://www.w3bai.com/es/js/js_reserved.html
 
+**Tipo de datos**
+
+- https://www.netinetidesign.com/post/tipos-de-datos-en-javascript/
+
+- https://ifgeekthen.nttdata.com/es/tipos-de-datos-y-operadores-en-javascript
+
+- https://blog.hubspot.es/website/tipos-de-datos-javascript
+
 ## IDE o Editor de código utilizado
 
 Visual studio code
