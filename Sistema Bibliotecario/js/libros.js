@@ -9,7 +9,6 @@ let estado = document.getElementsByName("Estado")
 //Botones
 let btnagregar = document.querySelector('#btnagregar');
 let btnbuscar = document.querySelector('#btnbuscar');
-let btnactualizar = document.querySelector('#btnactualizar');
 let btnlimpiar = document.querySelector('#btnlimpiar');
 
 //Evento de los botones
@@ -21,7 +20,7 @@ btnagregar.addEventListener("click",() => {
     //Agregar o quitar clases
     mensaje.classList.remove("d-none");
     if(idLibro.value != "" && nombreLibro.value != "" && genero.value != "" && estado.value != ""){
-        //Verificar que la referecia no esxtita
+        //Verificar que el id no esxtita
         let buscarlibro = libros.find(libro => libro.idLibro = idLibro.value);
 
         if(buscarlibro == undefined){ //No Encuentra el id
@@ -51,21 +50,25 @@ btnagregar.addEventListener("click",() => {
         mensaje.classList.add("alert-danger");
         mensaje.textContent = "Debes dilingeciar todos los datos";
    }
-
-   console.log(libros);
 });
 
-//Boton de Actualizar
-btnactualizar.addEventListener("click", () => {
-    mensaje.classList.remove("alert-danger");
-    mensaje.classList.add("d-none");
-
-    mensaje.classList.remove("d-none");
-    mensaje.classList.add("alert-info");
-    mensaje.textContent = "El libro fue actualizado";
-});
 
 //Boton de buscar
 btnbuscar.addEventListener("click", () =>{
-    
+    let buscarlibro = libros.find(libro => libro.idLibro = idLibro.value);
+
+    if (buscarlibro != undefined){
+        console.log(libros);
+    }else{
+        mensaje.classList.remove("d-none");
+        mensaje.classList.add("alert-danger");
+        mensaje.textContent = "El libro no existe";
+    }
+});
+
+//Boton de limpiar
+btnlimpiar.addEventListener("click", () =>{
+    idLibro.value = "";
+    nombreLibro.value = "";
+    mensaje.classList.add("d-none");
 })
