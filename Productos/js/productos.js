@@ -1,6 +1,7 @@
 let productos = []; //Creando el arreglo (de objeto)
 //Variable para el indice del producto encontrado
 let indexProdBuscar;
+// Referencia a Buscar
 let referenciaBuscar;
 //Referenciar cada uno de los elementos que tene cada uno de los elementos que tiene id en el archivo html
 let mensaje = document.getElementById('mensaje');
@@ -14,7 +15,7 @@ let btnbuscar = document.querySelector('#btnbuscar');
 let btnactualizar = document.querySelector('#btnactualizar');
 let btneliminar = document.querySelector('#btneliminar');
 let btnlistar = document.querySelector('#btnlistar');
-let btnlimpiar = document.querySelector('#btnlimpiar')
+let btnlimpiar = document.querySelector('#btnlimpiar');
 
 //Deshabilitar los botones de Actualizar y Eliminar
 function altenarBotones(toggle){
@@ -30,7 +31,7 @@ function altenarBotones(toggle){
 altenarBotones(false);
 
 //Eventos de botones
-//Botosn de agregar
+//Boton de agregar
 btnagregar.addEventListener("click",() => {
     //Verificar que todos los datos estan diligentes
     mensaje.classList.remove("alert-danger");
@@ -59,12 +60,12 @@ btnagregar.addEventListener("click",() => {
                 mensaje.classList.add("d-none");
             }, 2000);
         }else{ //Encontro la referenacia
-            mensaje.classList.remove("d-nnone");
+            mensaje.classList.remove("d-none");
             mensaje.classList.add("alert-danger");
             mensaje.textContent = "La referencia ya existe";
         }
    }else{
-        mensaje.classList.remove("d-nnone");
+        mensaje.classList.remove("d-none");
         mensaje.classList.add("alert-danger");
         mensaje.textContent = "Debes dilingeciar todos los datos";
    }
@@ -76,9 +77,9 @@ btnbuscar.addEventListener('click', () =>{
         let buscarProducto = productos.find(prod => prod.Referencia == referencia.value);
         if (buscarProducto != undefined){ //Lo encuentra
             //Recuperar los datos y mostralos en el fomulario, en cada input que tiene sus refenrecias respectivas
-            decripcion.value.buscarProducto.Decripcion;
-            precioUni.value.buscarProducto.PrecioUnitario;
-            Existencia.value = buscarProducto.Existencia;
+            decripcion.value = buscarProducto.Decripcion;
+            precioUni.value = buscarProducto.PrecioUnitario;
+            existencia.value = buscarProducto.Existencia;
             //Habiliatr los botones Actualiza y eliminar
             altenarBotones(true);
             indexProdBuscar = productos.findIndex(prod => prod.Referencia == referencia.value);
@@ -95,6 +96,7 @@ btnbuscar.addEventListener('click', () =>{
     }
 });
 
+//Evento del boton actualizar
 btnactualizar.addEventListener('click', ()=>{
     //Preguntar si la referencia a busca es igual a la referencia o modificar
     if(referenciaBuscar = referencia.value){
@@ -134,6 +136,9 @@ btnactualizar.addEventListener('click', ()=>{
             mensaje.classList.add("alert-success");
             mensaje.textContent = "Producto actualizado correctamente..."
 
+            setTimeout(()=>{
+                message.classList.add("d-none");
+            },2000)
         }
     }
-})
+});
