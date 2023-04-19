@@ -48,50 +48,60 @@ altenarBotones(false);
 //Eventos de botones
 //Boton de agregar
 btnagregar.addEventListener("click", () => {
-  //Verificar que todos los datos estan diligentes
   mensaje.classList.remove("alert-danger");
   mensaje.classList.add("d-none");
-  //Agregar o quitar clases
-  mensaje.classList.remove("d-none");
-  if (
-    referencia.value != "" &&
-    decripcion.value != "" &&
-    precioUni.value != "" &&
-    existencia.value != ""
-  ) {
-    //Verificar que la referecia no esxtita
-    let buscarProducto = productos.find(
-      (prod) => prod.Referencia == referencia.value
-    );
 
-    if (buscarProducto == undefined) {
-      //No Encuentra la referencia
-      //Algregar la clase alert-info
-      mensaje.classList.add("alert-success");
-      //Agregar el producto como objeto, al arreglo prroducto
-      productos.push({
-        Referencia: referencia.value,
-        Decripcion: decripcion.value,
-        PrecioUnitario: parseInt(precioUni.value),
-        Existencia: parseInt(existencia.value),
-      });
-      mensaje.textContent = "El producto se ha agregado correctamente ...";
-      console.log(productos);
-      //Retardo de 3 segundos y que desaparesca el mensaje
-      setTimeout(() => {
-        mensaje.classList.remove("alert-success");
-        mensaje.classList.add("d-none");
-      }, 2000);
-    } else {
-      //Encontro la referenacia
-      mensaje.classList.remove("d-none");
-      mensaje.classList.add("alert-danger");
-      mensaje.textContent = "La referencia ya existe";
-    }
-  } else {
+
+  if (isNaN(precioUni.value) || isNaN(existencia.value)) { //Verificar si el campo de Precio Unitario y Existencia son numeros
     mensaje.classList.remove("d-none");
     mensaje.classList.add("alert-danger");
-    mensaje.textContent = "Debes dilingeciar todos los datos";
+    mensaje.textContent = "Debes ingresar un numero  en 'Precio Unitario' o 'Existencia'";
+  } else {
+    //Verificar que todos los datos estan diligentes
+    mensaje.classList.remove("alert-danger");
+    mensaje.classList.add("d-none");
+    //Agregar o quitar clases
+    mensaje.classList.remove("d-none");
+    if (
+      referencia.value != "" &&
+      decripcion.value != "" &&
+      precioUni.value != "" &&
+      existencia.value != ""
+    ) {
+      //Verificar que la referecia no esxtita
+      let buscarProducto = productos.find(
+        (prod) => prod.Referencia == referencia.value
+      );
+
+      if (buscarProducto == undefined) {
+        //No Encuentra la referencia
+        //Algregar la clase alert-info
+        mensaje.classList.add("alert-success");
+        //Agregar el producto como objeto, al arreglo prroducto
+        productos.push({
+          Referencia: referencia.value,
+          Decripcion: decripcion.value,
+          PrecioUnitario: parseInt(precioUni.value),
+          Existencia: parseInt(existencia.value),
+        });
+        mensaje.textContent = "El producto se ha agregado correctamente ...";
+        console.log(productos);
+        //Retardo de 3 segundos y que desaparesca el mensaje
+        setTimeout(() => {
+          mensaje.classList.remove("alert-success");
+          mensaje.classList.add("d-none");
+        }, 2000);
+      } else {
+        //Encontro la referenacia
+        mensaje.classList.remove("d-none");
+        mensaje.classList.add("alert-danger");
+        mensaje.textContent = "La referencia ya existe";
+      }
+    } else {
+      mensaje.classList.remove("d-none");
+      mensaje.classList.add("alert-danger");
+      mensaje.textContent = "Debes dilingeciar todos los datos";
+    }
   }
 });
 
@@ -219,14 +229,14 @@ btnlistar.addEventListener("click", () => {
                                 <td>${prod.PrecioUnitario}</td>
                                 <td>${prod.Existencia}</td>
                                 <td>${(prod.PrecioUnitario * 19) / 100}</td>
-                                <td style= "color: ${prod.Existencia <= 5 ? "red": "green"}; font-weight: bold;">${prod.Existencia <= 5 ? "Pedir Producto" : "Ok"}</td>
+                                <td style= "color: ${prod.Existencia <= 5 ? "red" : "green"}; font-weight: bold;">${prod.Existencia <= 5 ? "Pedir Producto" : "Ok"}</td>
                             </tr>`;
     });
 
     tablaProductos += `</tbody></table>`;
     listado.innerHTML = tablaProductos;
     trunListado = false;
-  }else{
+  } else {
     listado.innerHTML = "";
     trunListado = true;
   }
