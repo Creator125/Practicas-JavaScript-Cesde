@@ -36,6 +36,10 @@ Estas son practicas que de JavaScript que realice en universidad Cesde
 
 - https://blog.hubspot.es/website/tipos-de-datos-javascript
 
+**Metodos de String**
+
+- https://tutobasico.com/string-javascript/
+
 ## IDE o Editor de código utilizado
 
 Visual studio code
