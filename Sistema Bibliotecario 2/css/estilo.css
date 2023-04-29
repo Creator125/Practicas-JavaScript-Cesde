@@ -1,0 +1,43 @@
+body{
+    background: url(../img/fondo.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+.formflotant{
+    background-color: #c3e2b9;
+    width: 50%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: #000 1px solid;
+}
+
+.formflotant h1{
+    text-align: center;
+}
+
+.formflotant .formEstados{
+    margin-top: 10px;
+}
+
+.formflotant form .botones{
+    text-align: center;
+    margin-top: 10px;
+}
+
+@media  (max-width: 768px) and (min-width: 320px){
+    .formflotant{
+        width: 100%;
+    }
+
+    .formflotant form .botones button{
+        margin-top: 4px;
+    }
+}
+
+#listado{
+    background-color: #d6ecff;
+    width: 100%;
+    border: #000 solid 1px;
+    border-radius: 5px;
+}
