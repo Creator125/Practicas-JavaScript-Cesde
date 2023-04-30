@@ -12,7 +12,12 @@ let idLibro = document.querySelector("#idLibro");
 let nombreLibro = document.querySelector("#nombreLibro");
 let genero = document.querySelector("#genero");
 //let estado = document.querySelector('input[name="Estado"]:checked');
-let estado = document.getElementsByName("Estado");
+//let estado = document.getElementsByName("Estado");
+// Obtener la referencia a los elementos radio
+let estadoDisponible = document.getElementById("Disponible");
+let estadoNoDisponible = document.getElementById("No-disponible");
+let estado;
+
 let listado = document.querySelector("#listado");
 //Botones
 let btnagregar = document.querySelector('#btnagregar');
@@ -21,6 +26,14 @@ let btnactualizar = document.querySelector("#btnactualizar");
 let btneliminar = document.getElementById("btneliminar");
 let btnlistar = document.querySelector("#btnlistar");
 let btnlimpiar = document.querySelector('#btnlimpiar');
+
+if(estadoDisponible.checked){
+    estado = estadoDisponible.value;
+}else if(estadoNoDisponible.checked){
+    estado = estadoNoDisponible.value;
+}
+
+console.log(estado);
 
 function altenarBotones(toggle) {
     if (toggle) {
@@ -38,9 +51,9 @@ function limpiarDatos() {
     idLibro.value = "";
     nombreLibro.value = "";
     genero.value = "";
-    estado.value = "";
+    estado = "";
   
-    //Posicionar el punto de insercion en od
+    //Posicionar el punto de insercion en id
     idLibro.focus();
   }
 
@@ -54,7 +67,7 @@ btnagregar.addEventListener("click",() => {
     mensaje.classList.add("d-none");
     //Agregar o quitar clases
     mensaje.classList.remove("d-none");
-    if(idLibro.value != "" && nombreLibro.value != "" && genero.value != "" && estado.value != ""){
+    if(idLibro.value != "" && nombreLibro.value != "" && genero.value != "" && estado != ""){
         //Verificar que el id no esxtita
         let buscarlibro = libros.find(libro => libro.Id == idLibro.value);
 
@@ -66,7 +79,7 @@ btnagregar.addEventListener("click",() => {
                 Id: parseInt(idLibro.value),
                 Nombre: nombreLibro.value,
                 Genero: genero.value,
-                Estado: estado.value
+                Estado: estado
             });
             mensaje.textContent = "El Libro se ha agregado correctamente ...";
             console.log(libros);
@@ -98,7 +111,7 @@ btnbuscar.addEventListener("click", () =>{
             idLibro.value = buscarlibro.Id;
             nombreLibro.value = buscarlibro.Nombre;
             genero.value = buscarlibro.Genero;
-            estado.value = buscarlibro.Estado;
+            estado = buscarlibro.Estado;
 
             //Habiliatr los botones Actualiza y eliminar
             altenarBotones(true);
@@ -127,7 +140,7 @@ btnactualizar.addEventListener("click", () => {
             Id: parseInt(idLibro.value),
             Nombre: nombreLibro.value,
             Genero: genero.value,
-            Estado: estado.value
+            Estado: estado
         });
 
         mensaje.classList.remove("alert-danger");
@@ -150,7 +163,7 @@ btnactualizar.addEventListener("click", () => {
                 Id: parseInt(idLibro.value),
                 Nombre: nombreLibro.value,
                 Genero: genero.value,
-                Estado: estado.value
+                Estado: estado
             });
 
             mensaje.classList.remove("alert-danger");
