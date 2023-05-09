@@ -10,21 +10,21 @@
 </head>
 <body>
     <div class="container">
-        <h1>HiperTenology</h1>
+        <h1>HiperFood</h1>
         <div class="icon-carito">
             <a href="#" id="vercarrito">
                 <img src="img/icons/shopping-cart.svg" title="Ver carrito">
             </a>
-            <span id="contitems">0</span>
+            <span id="contitems" style="color: red;">0</span>
         </div>
         <div class="row">
             <div class="col">
                 <div class="card" style="width: 18rem;">
                     <img src="img/pollo-frito.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
+                      <h5 class="card-title" id="pollodes">Pollo frito</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary" id="carne-pollo">Comprar</a>
+                      <a href="#" class="btn btn-primary" id="carne-pollo">Agregar</a>
                     </div>
                   </div>
             </div>
@@ -32,9 +32,9 @@
                 <div class="card" style="width: 18rem;">
                     <img src="img/carne-de-cerdo.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
+                      <h5 class="card-title" id="cerdodes">Carne de cerdo</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="btn btn-primary" id="carne-cerdo">Go somewhere</a>
+                      <a href="#" class="btn btn-primary" id="carne-cerdo">Agregar</a>
                     </div>
                   </div>
             </div>
@@ -42,9 +42,9 @@
                 <div class="card" style="width: 18rem;">
                     <img src="img/carne-res.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
+                      <h5 class="card-title" id="resdes">Carne de res</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="carne-res">Go somewhere</a>
+                      <a href="#" class="btn btn-primary" id="carne-res">Agregar</a>
                     </div>
                   </div>
             </div>
@@ -55,9 +55,9 @@
                 <div class="card" style="width: 18rem;">
                     <img src="img/uvas.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
+                      <h5 class="card-title" id="uvasdes">Uvas</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="uvas">Go somewhere</a>
+                      <a href="#" class="btn btn-primary" id="uvas">Agregar</a>
                     </div>
                   </div>
             </div>
@@ -65,9 +65,9 @@
                 <div class="card" style="width: 18rem;">
                     <img src="img/manzanas.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
+                      <h5 class="card-title"id="manzanades">Manzanas</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="manzanas">Go somewhere</a>
+                      <a href="#" class="btn btn-primary" id="manzanas">Agregar</a>
                     </div>
                   </div>
             </div>
@@ -75,9 +75,9 @@
                 <div class="card" style="width: 18rem;">
                     <img src="img/repolloMorado.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
+                      <h5 class="card-title" id="repollodes">Repollo Morado</h5>
                       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      <a href="#" class="repolloMorado">Go somewhere</a>
+                      <a href="#" class="btn btn-primary" id="repollo">Agregar</a>
                     </div>
                   </div>
             </div>
@@ -85,5 +85,47 @@
     </div>
 
     <script src="js/bootstrap.js"></script>
+    <script src="js/micarrito.js"></script>
+    <script>
+      //Refereciando los elementos
+      let contitems = document.getElementById("contitems");
+      contitems.textContent = 0
+      let carnePollo = document.getElementById("carne-pollo");
+      let carneCerdo = document.getElementById("carne-cerdo");
+      let carneRes = document.getElementById("carne-res");
+      let uvas = document.getElementById("uvas");
+      let manzanas = document.getElementById("manzanas");
+      let repollo = document.getElementById("repollo");
+      let pollodes = document.getElementById("pollodes");
+      let cerdodes = document.getElementById("cerdodes");
+      let resdes = document.getElementById("resdes");
+      let uvasdes = document.getElementById("uvasdes");
+      let manzanasdes = document.getElementById("manzanasdes");
+      let repollodes = document.getElementById("repollodes");
+
+      //Boton de carne-pollo
+      carnePollo.addEventListener('click', () => {
+          //Invocar la funcion para agreagar el intem al arreglo carrito, si existe que aumenta la cantidad
+          agregarCarrito("carne de pollo", pollodes.textContent);
+          //Actualizar el elemento contitems 
+          contitems.textContent = `(${contitems.textContent})`
+      });
+
+      //Boton de carne-cerdo
+      carneCerdo.addEventListener('click', () => {
+          //Invocar la funcion para agreagar el intem al arreglo carrito, si existe que aumenta la cantidad
+          agregarCarrito("carne de pollo", pollodes.textContent);
+          //Actualizar el elemento contitems
+          contitems.textContent = `(${contitems.textContent})`
+      });
+
+      //Boton de carne-res
+      carneRes.addEventListener('click', () => {
+          //Invocar la funcion para agreagar el intem al arreglo carrito, si existe que aumenta la cantidad
+          agregarCarrito("carne de pollo", pollodes.textContent);
+          //Actualizar el elemento contitems
+          contitems.textContent = `(${contitems.textContent})`
+      });
+    </script>
 </body>
 </html>
