@@ -40,6 +40,8 @@ Estas son practicas que de JavaScript que realice en universidad Cesde
 
 - https://tutobasico.com/string-javascript/
 
+- https://geekflare.com/es/javascript-string-method/
+
 ## IDE o Editor de código utilizado
 
 Visual studio code
