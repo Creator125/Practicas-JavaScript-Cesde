@@ -1,14 +1,15 @@
 //Definir el arreglo de objeto del carrito
 let carrito = []
 
-function agregarCarrito(id, descripcion){
+function agregarCarrito(id, descripcion, precio){
     //Buscar el id en el arreglo de objeto carrito
     let findItem = carrito.find(item => item.id == id);
     if(findItem == undefined){
         carrito.push({
             id: id,
             descripcion: descripcion,
-            cantidad: 1
+            cantidad: 1,
+            precio: precio
         });
     }else{
         //Desetructurando el objeto el findItem
