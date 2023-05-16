@@ -6,3 +6,9 @@
 .icon-carito img{
     width: 50px;
 }
+
+#mostrarCarrito{
+    float: right;
+    width: 20px;
+    top: 0;
+}
