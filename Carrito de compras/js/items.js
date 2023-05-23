@@ -16,6 +16,10 @@ let repollodes = document.getElementById("repollodes");
 let verCarrito = document.getElementById("verCarrito");
 let mostrarCarrito = document.getElementById("mostrarCarrito");
 
+//Se creará una variable para local storage
+localStorage.setItem("nombre", "Tolas Gonzales");
+
+
 function mirarCarrito(){
   if(carrito.length > 0){
     // Crear una variable tipo string para almacenar todos los items del carrito de compra (table)
@@ -30,7 +34,7 @@ function mirarCarrito(){
                             let total = 0; 
                             for(item of carrito){
                                 carritoTabla += `<tr>
-                                                <td>${item.descricion}</td>
+                                                <td>${item.descripcion}</td>
                                                 <td>${item.cantidad}</td>
                                                 <td>${item.precio}</td
                                                 <td>${item.precio * item.cantidad}</td>
@@ -57,7 +61,7 @@ verCarrito.addEventListener("click", mirarCarrito)
 //Boton de los items del mercado
 carnePollo.addEventListener('click', () => {
     //Invocar la funcion para agreagar el intem al arreglo carrito, si existe que aumenta la cantidad
-    agregarCarrito("carne de pollo", pollodes.textContent, 4000);
+    agregarCarrito("carne-pollo", pollodes.textContent, 4000);
     //Actualizar el elemento contitems que contendrá la logitud del arreglo carrito
     contitems.textContent = `(${(carrito.length)})`;
 });

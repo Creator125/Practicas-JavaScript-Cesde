@@ -35,11 +35,14 @@ function agregarCarrito(id, descripcion, precio){
                                   let total = 0; 
                                   for(item of carrito){
                                       carritoTabla += `<tr>
-                                                      <td>${item.descricion}</td>
+                                                      <td>${item.descripcion}</td>
                                                       <td>${item.cantidad}</td>
                                                       <td>${item.precio}</td
                                                       <td>${item.precio * item.cantidad}</td>
-                                                      <td><button type="button" class="btn btn-danger"><img src="img/icons/trash-fill.svg"></button></td>
+                                                      <td><button type="button"
+                                                                   class="btn btn-danger" onClick="alert('${item.id}');">
+                                                                  <img src="img/icons/trash-fill.svg">
+                                                          </button></td>
                                                     </tr>`
                                   }                  total += item.precio * item.cantidad;
                                     carritoTabla += `</tbody>
@@ -49,7 +52,8 @@ function agregarCarrito(id, descripcion, precio){
                                                     </tr>
                                                     </tfoot>
                                                     </table>
-                                                    <button type="button" class="btn btn-danger" onclik="limpiarCarrito()">Vaciar carrito`;
+                                                    <button type="button" class="btn btn-danger" onclik="limpiarCarrito()">Vaciar carrito</button>
+                                                    <a href="../pagar.html" class="btn btn-success">Pagar</a>`
           mostrarCarrito.innerHTML = carritoTabla;
       }else{
         verCarrito.textContent = "El carrito está vacio"
@@ -62,4 +66,16 @@ function limpiarCarrito(){
     verCarrito.innerHTML = "";
     console.log(carrito);
     contitems.textContent = `(${(0)})`;
+}
+
+function eliminarCarrito(){
+  console.log(id);
+  let index = carrito.indexOf(id);
+  carrito.splice(index, 1);
+  verCarrito();
+  contitems.textContent = `(${(carrito.length)})`;
+}
+
+function pagar(){
+  localStorage("carrito", JSON.stringify(carrito));
 }
