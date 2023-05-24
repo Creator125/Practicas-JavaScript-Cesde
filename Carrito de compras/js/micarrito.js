@@ -13,58 +13,58 @@ function agregarCarrito(id, descripcion, precio){
         });
     }else{
         //Desetructurando el objeto el findItem
-        let (id, descripcion, cantidad) = findItem;
+        let {id, descripcion, cantidad} = findItem;
         cantidad++;
         //Encontrar el indice del item arreglo
         const index = carrito.findIndex(item => item.id === id);
         //Actualizar el item
         carrito[index].cantidad = cantidad;
     }
-      console.log(carrito);
+    console.log(carrito);
+    mirarCarrito();
     
-      if(carrito.length > 0){
-        // Crear una variable tipo string para almacenar todos los items del carrito de compra (table)
-        let carritoTabla = `<table class = "table table-hover">
-                                  <thead>
-                                    <th>Descripción</th>
-                                    <th>Cantida</th>
-                                    <th>Precio</th>
-                                    <th>Subtotal</th>
-                                  </thead>
-                                  <tbody>`
-                                  let total = 0; 
-                                  for(item of carrito){
-                                      carritoTabla += `<tr>
-                                                      <td>${item.descripcion}</td>
-                                                      <td>${item.cantidad}</td>
-                                                      <td>${item.precio}</td
-                                                      <td>${item.precio * item.cantidad}</td>
-                                                      <td><button type="button"
-                                                                   class="btn btn-danger" onClick="alert('${item.id}');">
-                                                                  <img src="img/icons/trash-fill.svg">
-                                                          </button></td>
-                                                    </tr>`
-                                  }                  total += item.precio * item.cantidad;
-                                    carritoTabla += `</tbody>
-                                                      <tfoot>
-                                                    <tr>
-                                                      <td colspan="4" aling="right" style="font-size:28; font-weight:bold">Total: ${total}</td>
-                                                    </tr>
-                                                    </tfoot>
-                                                    </table>
-                                                    <button type="button" class="btn btn-danger" onclik="limpiarCarrito()">Vaciar carrito</button>
-                                                    <a href="../pagar.html" class="btn btn-success">Pagar</a>`
-          mostrarCarrito.innerHTML = carritoTabla;
-      }else{
-        verCarrito.textContent = "El carrito está vacio"
-      }
-
+function mirarCarrito(){
+  if(carrito.length > 0){
+    // Crear una variable tipo string para almacenar todos los items del carrito de compra (table)
+    let carritoTabla = `<table class = "table table-hover">
+                            <thead>
+                              <th>Descripción</th>
+                              <th>Cantida</th>
+                              <th>Precio</th>
+                              <th>Subtotal</th>
+                            </thead>
+                            <tbody>`
+                            let total = 0; 
+                            for(item of carrito){
+                                carritoTabla += `<tr>
+                                                <td>${item.descripcion}</td>
+                                                <td>${item.cantidad}</td>
+                                                <td>${item.precio}</td
+                                                <td>${item.precio * item.cantidad}</td>
+                                                <td><button type="button" class="btn btn-danger" onclick= eliminarCarrito('${item.id}');>
+                                                      <img src="img/icons/trash-fill.svg">
+                                                    </button>
+                                                </td>
+                                              </tr>`
+                            }                  total += item.precio * item.cantidad;
+                              carritoTabla += `</tbody>
+                                                <tfoot>
+                                              <tr>
+                                                <td colspan="4" aling="right" style="font-size:28; font-weight:bold">Total: ${total}</td>
+                                              </tr>
+                                              </tfoot>
+                                              </table>
+                                              <button type="button" class="btn btn-danger" onclik="limpiarCarrito()">Vaciar carrito</button>
+                                              <a href ="../pagar.html" class=" btn btn-success" onclick"pagar()">Pagar</a>`;
+    mostrarCarrito.innerHTML = carritoTabla;            
+  }else{
+    verCarrito.textContent = "El carrito está vacio"
+  }
 }
 
 function limpiarCarrito(){
     carrito = [];
     verCarrito.innerHTML = "";
-    console.log(carrito);
     contitems.textContent = `(${(0)})`;
 }
 
@@ -72,6 +72,7 @@ function eliminarCarrito(){
   console.log(id);
   let index = carrito.indexOf(id);
   carrito.splice(index, 1);
+  console.log(carrito)
   verCarrito();
   contitems.textContent = `(${(carrito.length)})`;
 }
