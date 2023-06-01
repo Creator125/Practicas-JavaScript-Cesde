@@ -39,8 +39,8 @@ function mirarCarrito(){
                                 carritoTabla += `<tr>
                                                 <td>${item.descripcion}</td>
                                                 <td>${item.cantidad}</td>
-                                                <td>${item.precio}</td
-                                                <td>${item.precio * item.cantidad}</td>
+                                                <td>${new Int1.NumberFormat('de-DE').format(item.precio)}</td
+                                                <td>${new Int1.NumberFormat('de-DE').format(item.precio * item.cantidad)}</td>
                                                 <td><button type="button" class="btn btn-danger" onclick= eliminarCarrito('${item.id}');>
                                                       <img src="img/icons/trash-fill.svg">
                                                     </button>
@@ -62,10 +62,47 @@ function mirarCarrito(){
   }
 }
 
+function mirarCarritoPagar(carrito){
+  if(carrito.length > 0){
+    // Crear una variable tipo string para almacenar todos los items del carrito de compra (table)
+    let carritoTabla = `<table class = "table table-hover">
+                            <thead>
+                              <th>Descripción</th>
+                              <th>Cantida</th>
+                              <th>Precio</th>
+                              <th>Subtotal</th>
+                            </thead>
+                            <tbody>`
+                            let total = 0; 
+                            for(item of carrito){
+                                carritoTabla += `<tr>
+                                                <td>${item.descripcion}</td>
+                                                <td>${item.cantidad}</td>
+                                                <td>${new Int1.NumberFormat('de-DE').format(item.precio)}</td
+                                                <td>${new Int1.NumberFormat('de-DE').format(item.precio * item.cantidad)}</td>
+                                                
+                                              </tr>`
+                            }                  total += item.precio * item.cantidad;
+                              carritoTabla += `</tbody>
+                                                <tfoot>
+                                              <tr>
+                                                <td colspan="4" aling="right" style="font-size:28; font-weight:bold">Total: ${total}</td>
+                                              </tr>
+                                              </tfoot>
+                                              </table>
+                                              <a href="../index.html" class="btn btn-danger" onclik="cleanStorage()">Finalizar</a>`
+    mostrarCarrito.innerHTML = carritoTabla;            
+  }else{
+    verCarrito.textContent = "El carrito está vacio"
+  }
+}
+
 function limpiarCarrito(){
+    localStorage.clear();
     carrito = [];
     verCarrito.innerHTML = "";
     contitems.textContent = `(${(0)})`;
+
 }
 
 function eliminarCarrito(){
