@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="img/icons/Vehiculo-icon.svg" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/icons/Vehiculo-icon.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <title>Vehiculos</title>
-
+    <title>Vehiculos | Renta</title>
 </head>
 <body>
     <div class="container">
@@ -24,16 +23,22 @@
             <form action="containerForm">
                 <h2>Inicio de Sesion</h2>
                 <div>
-                    <input type="text" placeholder="Usuario">
-                    <input type="password" placeholder="Contraseña">
+                    <label for="placa">Placa</label>
+                    <input type="number" name="" id="">
+                    <label for="fechaInicial">Fecha inicial</label>
+                    <input type="date" name="" id="">
+                    <label for="fechaInicial">Fecha final</label>
+                    <input type="date" name="" id="">
+                    <input type="number" name="" id="">
                 </div>
             </form>
-            <button type="button" class="btn btn btn-success" id="iniciarSecion">Inicar Sesion</button>
+            <button type="button" class="btn btn btn-success" id="login">Inicar Sesion</button>
             <div>
                 <a href="registro.html">Registrase aquí</a>
                 <a href="#">¿Olvidaste la contraseña?</a>
             </div>
         </div>
+    </div>
     <script src="js/bootstrap.js"></script>
 </body>
 </html>
