@@ -1,44 +1,27 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/icons/Vehiculo-icon.svg" type="image/x-icon">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <title>Vehiculos | Renta</title>
+    <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <ul>
-                <li><h1>Renta de vehiculos</h1></li>
-                <li><img src="img/icons/Vehiculo-icon.svg" alt="" width="100px"></li>
-                <li><a href="#">Iniciar sesion</a></li>
-                <li><a href="registro.html">Registrase</a></li>
-            </ul>
-        </nav>
-
-        <div>
-            <form action="containerForm">
-                <h2>Inicio de Sesion</h2>
-                <div>
-                    <label for="placa">Placa</label>
-                    <input type="number" name="" id="">
-                    <label for="fechaInicial">Fecha inicial</label>
-                    <input type="date" name="" id="">
-                    <label for="fechaInicial">Fecha final</label>
-                    <input type="date" name="" id="">
-                    <input type="number" name="" id="">
-                </div>
-            </form>
-            <button type="button" class="btn btn btn-success" id="login">Inicar Sesion</button>
-            <div>
-                <a href="registro.html">Registrase aquí</a>
-                <a href="#">¿Olvidaste la contraseña?</a>
-            </div>
-        </div>
-    </div>
-    <script src="js/bootstrap.js"></script>
+    <h2>Renta de vehículos</h2>
+  <form>
+    <label for="placa">Placa:</label><br>
+    <input type="text" id="placa" name="placa" required><br><br>
+    <label for="fecha-inicial">Fecha inicial:</label><br>
+    <input type="date" id="fecha-inicial" name="fecha-inicial" required><br><br>
+    <label for="fecha-final">Fecha final:</label><br>
+    <input type="date" id="fecha-final" name="fecha-final" required><br><br>
+    <label for="numero-renta">Número de renta:</label><br>
+    <input type="text" id="numero-renta" name="numero-renta" required><br><br>
+    <input type="submit" value="Guardar">
+  </form>
+  <p>
+    <a href="listar-vehiculos-disponibles.html">Listar vehículos disponibles</a><br>
+    <a href="cerrar-sesion.html">Cerrar sesión</a>
+  </p>
 </body>
 </html>
