@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="icon/Vehiculo-icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>Registrarse | SuperVehiculos</title>
 </head>
 <body>
-    <h2>Registro</h2>
-  <form>
-    <label for="username">Usuario:</label><br>
-    <input type="text" id="username" name="username" required><br><br>
-    <label for="name">Nombre:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
-    <label for="role">Rol:</label><br>
-    <select id="role" name="role" required>
-      <option value="">Seleccionar</option>
-      <option value="admin">Administrador</option>
-      <option value="user">Usuario</option>
-    </select><br><br>
-    <label for="keyword">Palabra reservada:</label><br>
-    <input type="password" id="keyword" name="keyword" required><br><br>
-    <input type="submit" value="Registrarse">
-  </form>
+  <header>
+    <a href="index.html" title="Pagina pricipal"><img src="icon/house-door-fill.svg"></a>
+  </header>
+    <div class="container contanedor">
+      <h2>Registro</h2>
+      <form>
+          <label for="username">Usuario:</label><br>
+          <input type="text" id="username" name="username" required><br><br>
+          <label for="name">Nombre:</label><br>
+          <input type="text" id="name" name="name" required><br><br>
+          <label for="role">Rol:</label><br>
+          <select id="role" name="role" required>
+            <option value="">Seleccionar</option>
+            <option value="admin">Administrador</option>
+            <option value="user">Usuario</option>
+          </select><br><br>
+          <label for="keyword">Palabra reservada:</label><br>
+          <input type="password" id="keyword" name="keyword" required><br><br>
+          <input type="submit" value="Registrarse" id="btnRegister">
+        </form>
+    </div>
 </body>
 </html>
