@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,21 +14,36 @@
   </header>
     <div class="container contanedor">
       <h2>Registro</h2>
+
+        <!--Mensaje en caso de que el usuario ya existan-->
+        <div class="alert d-none" role="alert" id="mensaje"></div>
+
       <form>
-          <label for="username">Usuario:</label><br>
-          <input type="text" id="username" name="username" required><br><br>
-          <label for="name">Nombre:</label><br>
-          <input type="text" id="name" name="name" required><br><br>
-          <label for="role">Rol:</label><br>
-          <select id="role" name="role" required>
+          <label>Usuario:</label><br>
+          <input type="text" id="reUsername" name="username"><br><br>
+
+          <label>Nombre:</label><br>
+          <input type="text" id="reName" name="name"><br><br>
+          
+          <label>Rol:</label><br>
+          <select id="reRole" name="role">
             <option value="">Seleccionar</option>
             <option value="admin">Administrador</option>
             <option value="user">Usuario</option>
           </select><br><br>
-          <label for="keyword">Palabra reservada:</label><br>
-          <input type="password" id="keyword" name="keyword" required><br><br>
+
+          <label>Contrseña:</label><br>
+          <input type="password" id="rePassword" name="password"><br><br>
+
+          <label>Palabra reservada:</label><br>
+          <input type="text" id="reKeyword" name="keyword"><br><br>
           <input type="submit" value="Registrarse" id="btnRegister">
         </form>
+        
+        </div>
     </div>
+
+    <script src="js/bootstrap.js"></script>
+    <script src="js/custom/usuarios.js"></script>
 </body>
 </html>
