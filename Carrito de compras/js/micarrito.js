@@ -40,8 +40,8 @@ function mirarCarrito(){
                                 carritoTabla += `<tr>
                                                 <td>${item.descripcion}</td>
                                                 <td>${item.cantidad}</td>
-                                                <td>${new Int1.NumberFormat('de-DE').format(item.precio)}</td>
-                                                <td>${new Int1.NumberFormat('de-DE').format(item.precio * item.cantidad)}</td>
+                                                <td>${new Intl.NumberFormat('de-DE').format(item.precio)}</td>
+                                                <td>${new Intl.NumberFormat('de-DE').format(item.precio * item.cantidad)}</td>
                                                 <td><button type="button" class="btn btn-danger" onclick= "eliminarCarrito('${item.id}');";>
                                                       <img src="img/icons/trash-fill.svg">
                                                     </button>
@@ -80,8 +80,8 @@ function mirarCarritoPagar(carrito){
                                 carritoTabla += `<tr>
                                                 <td>${item.descripcion}</td>
                                                 <td>${item.cantidad}</td>
-                                                <td>${new Int1.NumberFormat('de-DE').format(item.precio)}</td
-                                                <td>${new Int1.NumberFormat('de-DE').format(item.precio * item.cantidad)}</td>
+                                                <td>${new Intl.NumberFormat('de-DE').format(item.precio)}</td
+                                                <td>${new Intl.NumberFormat('de-DE').format(item.precio * item.cantidad)}</td>
                                               </tr>`
                                               total += item.precio * item.cantidad;
                             }                 
