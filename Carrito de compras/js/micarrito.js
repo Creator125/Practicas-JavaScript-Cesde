@@ -22,6 +22,7 @@ function agregarCarrito(id, descripcion, precio){
     }
     console.log(carrito);
     mirarCarrito();
+}
     
 function mirarCarrito(){
   if(carrito.length > 0){
@@ -39,18 +40,19 @@ function mirarCarrito(){
                                 carritoTabla += `<tr>
                                                 <td>${item.descripcion}</td>
                                                 <td>${item.cantidad}</td>
-                                                <td>${new Int1.NumberFormat('de-DE').format(item.precio)}</td
+                                                <td>${new Int1.NumberFormat('de-DE').format(item.precio)}</td>
                                                 <td>${new Int1.NumberFormat('de-DE').format(item.precio * item.cantidad)}</td>
-                                                <td><button type="button" class="btn btn-danger" onclick= eliminarCarrito('${item.id}');>
+                                                <td><button type="button" class="btn btn-danger" onclick= "eliminarCarrito('${item.id}');";>
                                                       <img src="img/icons/trash-fill.svg">
                                                     </button>
                                                 </td>
                                               </tr>`
-                            }                  total += item.precio * item.cantidad;
+                                              total += item.precio * item.cantidad;
+                              }                  
                               carritoTabla += `</tbody>
                                                 <tfoot>
                                               <tr>
-                                                <td colspan="4" aling="right" style="font-size:28; font-weight:bold">Total: ${total}</td>
+                                                <td colspan="4" aling="right" style="font-size:28; font-weight:bold">Total: ${new Intl.NumberFormat('de-DE').format(total)}</td>
                                               </tr>
                                               </tfoot>
                                               </table>
@@ -80,9 +82,9 @@ function mirarCarritoPagar(carrito){
                                                 <td>${item.cantidad}</td>
                                                 <td>${new Int1.NumberFormat('de-DE').format(item.precio)}</td
                                                 <td>${new Int1.NumberFormat('de-DE').format(item.precio * item.cantidad)}</td>
-                                                
                                               </tr>`
-                            }                  total += item.precio * item.cantidad;
+                                              total += item.precio * item.cantidad;
+                            }                 
                               carritoTabla += `</tbody>
                                                 <tfoot>
                                               <tr>
@@ -90,10 +92,10 @@ function mirarCarritoPagar(carrito){
                                               </tr>
                                               </tfoot>
                                               </table>
-                                              <a href="../index.html" class="btn btn-danger" onclik="cleanStorage()">Finalizar</a>`
-    mostrarCarrito.innerHTML = carritoTabla;            
+                                              <a href="../index.html" class="btn btn-danger" onclik="limpiarCarrito()">Finalizar</a>`
+    verCarrito.innerHTML = carritoTabla;            
   }else{
-    verCarrito.textContent = "El carrito está vacio"
+    verCarrito.textContent = "El carrito está vacio";
   }
 }
 
@@ -105,12 +107,12 @@ function limpiarCarrito(){
 
 }
 
-function eliminarCarrito(){
+function eliminarCarrito(id){
   console.log(id);
-  let index = carrito.indexOf(id);
+  let index = carrito.findIndex(c => c.id === id);
   carrito.splice(index, 1);
-  console.log(carrito)
-  verCarrito();
+  console.log(carrito);
+  mirarCarrito();
   contitems.textContent = `(${(carrito.length)})`;
 }
 

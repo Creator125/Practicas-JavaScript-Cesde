@@ -1,10 +1,15 @@
 .icon-carito{
+    display: flex;
     float: right;
     margin-bottom: 100px;
 }
 
 .icon-carito img{
     width: 50px;
+}
+
+#contitems{
+    color: #ff0000;
 }
 
 #mostrarCarrito{

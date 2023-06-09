@@ -17,29 +17,29 @@ let verCarrito = document.getElementById("verCarrito");
 let mostrarCarrito = document.getElementById("mostrarCarrito");
 
 //Se creará una variable para local storage
-localStorage.setItem("nombre", "Tolas Gonzales");
-localStorage.setItem("carrito", carrito);
+// localStorage.setItem("nombre", "Tolas Gonzales");
+// localStorage.setItem("carrito", carrito);
 
 
 //Boton de "verCarrito"
-verCarrito.addEventListener("click", mirarCarrito)
+verCarrito.addEventListener("click", mirarCarrito);
 
 //Boton de los items del mercado
 carnePollo.addEventListener('click', () => {
     //Invocar la funcion para agreagar el intem al arreglo carrito, si existe que aumenta la cantidad
-    agregarCarrito("carne-pollo", pollodes.textContent, 4000);
+    agregarCarrito("carne-pollo", pollodes.textContent, 5000);
     //Actualizar el elemento contitems que contendrá la logitud del arreglo carrito
     contitems.textContent = `(${(carrito.length)})`;
 });
 carneCerdo.addEventListener('click', () => {
     //Invocar la funcion para agreagar el intem al arreglo carrito, si existe que aumenta la cantidad
-    agregarCarrito("carne de cerdo", cerdodes.textContent,5000 );
+    agregarCarrito("carne de cerdo", cerdodes.textContent,6000 );
     //Actualizar el elemento contitems que contendrá la logitud del arreglo carrito
     contitems.textContent = `(${(carrito.length)})`;
 });
 carneRes.addEventListener('click', () => {
     //Invocar la funcion para agreagar el intem al arreglo carrito, si existe que aumenta la cantidad
-    agregarCarrito("carne de res", resdes.textContent, 5000);
+    agregarCarrito("carne de res", resdes.textContent, 4000);
     //Actualizar el elemento contitems que contendrá la logitud del arreglo carrito
     contitems.textContent = `(${(carrito.length)})`;
 });
@@ -51,13 +51,13 @@ uvas.addEventListener('click', () => {
 });
 manzanas.addEventListener('click', () => {
     //Invocar la funcion para agreagar el intem al arreglo carrito, si existe que aumenta la cantidad
-    agregarCarrito("manzanas", manzanasdes.textContent, 4000);
+    agregarCarrito("manzanas", manzanasdes.textContent, 3000);
     //Actualizar el elemento contitems que contendrá la logitud del arreglo carrito
     contitems.textContent = `(${(carrito.length)})`;
 });
 repollo.addEventListener('click', () => {
     //Invocar la funcion para agreagar el intem al arreglo carrito, si existe que aumenta la cantidad
-    agregarCarrito("repollo", repollodes.textContent, 5000);
+    agregarCarrito("repollo", repollodes.textContent, 4000);
     //Actualizar el elemento contitems que contendrá la logitud del arreglo carrito
     contitems.textContent = `(${(carrito.length)})`;
 });
