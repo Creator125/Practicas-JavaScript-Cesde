@@ -1,4 +1,5 @@
 let usuarios = [];
+let buscarUsername;
 
 //Referenciando los id de regisros.html
 let reUsername = document.querySelector("#reUsername");
@@ -6,6 +7,8 @@ let reName = document.querySelector("#reName");
 let reRole = document.querySelector("#reRole");
 let rePassword = document.querySelector("#rePassword");
 let reKeyword = document.querySelector("#reKeyword");
+let username = document.querySelector('#username');
+let password = document.querySelector('#password');
 let mensaje = document.querySelector("#mensaje");
 //Botones
 let btnRegister = document.querySelector("#btnRegister");
@@ -52,5 +55,31 @@ btnRegister.addEventListener("click", () => {
         mensaje.classList.remove("d-none");
         mensaje.classList.add("alert-danger");
         mensaje.textContent = "Debes dilingeciar todos los datos";
+    }
+});
+
+btnlogin.addEventListener("click", () => {
+    if(username.value != undefined && password.value != undefined){
+        let buscarUsuario = usuarios.find(user => user.Usuario == username.value);
+        let usuarioGuardado = JSON.parse(localStorage.getItem("usuarios"));
+
+        if(buscarUsuario != undefined){
+            if(username.value == usuarioGuardado.Usuario && password.value == usuarioGuardado.Cotrasena){
+                mensaje.textContent = `Eres ${usuarioGuardado.Usuario}`;
+
+                setTimeout(() => {
+                    mensaje.classList.remove("alert-success");
+                    mensaje.classList.add("d-none");
+                }, 5000);
+            }else{
+                mensaje.classList.remove("d-none");
+                mensaje.classList.add("alert-danger");
+                mensaje.textContent = "Usuario o contraseña incorrectos";
+            }
+        }else{
+            mensaje.classList.remove("d-none");
+            mensaje.classList.add("alert-danger");
+            mensaje.textContent = "El usuario no existe";
+        }
     }
 });
