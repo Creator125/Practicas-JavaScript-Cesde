@@ -1,5 +1,9 @@
 let usuarios = [];
 let buscarUsername;
+//Variable para el indice del usuario encontrado
+let indexUsuarioBuscar;
+// Id del libro a Buscar
+let idBuscar;
 
 //Referenciando los id de regisros.html
 let Username = document.querySelector("#username");
@@ -54,6 +58,28 @@ btnRegister.addEventListener("click",() => {
         mensaje.classList.add("alert-danger");
         mensaje.textContent = "Debes dilingeciar todos los datos";
    }
+});
+
+btnlogin.addEventListener("click", () =>{
+    if (Username.value != "") {
+        let buscarUsuario = usuarios.find(usuario => usuario.Usuario == username.value);
+
+        if (buscarUsuario != undefined){ //Lo encuetra
+
+            indexUsuarioBuscar = usuarios.find(usuario => usuarios.Usuario == Username.value);
+
+            idBuscar = username.value;
+        }else{
+            mensaje.classList.remove("d-none");
+            mensaje.classList.add("alert-danger");
+            mensaje.textContent = "El usuario no existe";
+        }
+  
+    }else{
+        mensaje.classList.remove("d-none");
+        mensaje.classList.add("alert-danger");
+        mensaje.textContent = "Debes ingresar el usuario y contraseña";
+    }
 });
 
 //Boton de iniciar sesion

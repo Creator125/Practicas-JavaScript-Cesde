@@ -1,0 +1,29 @@
+body{
+    background: url(../images/background.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+.barra-navegacion{
+    background-color: #0f98f8;
+    margin-bottom: 10%;
+    padding: 10px;
+}
+
+.contenedor{
+    background-color: #00dbeb;
+    width: 50%;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: -5px 5px 7px #2b2b2b;
+    border: #000 1px solid;
+    text-align: center;
+}
+
+.formcustom form{
+    font-weight: bold;
+}
+
+.contenedor a{
+    color: #0003ac;
+}
+

@@ -6,14 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="icon/Vehiculo-icon.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/mystyle.css">
     <title>iniciar sesion | SuperVehiculos</title>
 </head>
 <body>
-  <header>
+  <header class="barra-navegacion">
     <a href="index.html" title="Pagina pricipal"><img src="icon/house-door-fill.svg"></a>
   </header>
-  <div class="container contanedor">
-    <div class="alert d-none" role="alert" id="mensaje"></div>
+  <div class="alert d-none" role="alert" id="mensaje"></div>
+
+  <div class="container contenedor">
 
     <h2>Iniciar sesión</h2>
 
@@ -25,7 +27,7 @@
         <input type="text" id="username" name="username" required><br><br>
         <label for="password">Contraseña:</label><br>
         <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Iniciar sesión" id="btnlogin">
+        <input type="submit" value="Iniciar sesión" id="btnlogin" class="btn btn btn-success">
       </form>
     </div>
     

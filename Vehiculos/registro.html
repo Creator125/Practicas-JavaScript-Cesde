@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="icon/Vehiculo-icon.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/mystyle.css">
     <title>Registrarse | SuperVehiculos</title>
 </head>
 <body>
-  <header>
+  <header class="barra-navegacion">
     <a href="index.html" title="Pagina pricipal"><img src="icon/house-door-fill.svg"></a>
   </header>
-    <div class="container contanedor">
-      <h2>Registro</h2>
+    <!--Mensaje en caso de que el usuario ya existan-->
+    <div class="alert d-none" role="alert" id="mensaje"></div>
 
-        <!--Mensaje en caso de que el usuario ya existan-->
-        <div class="alert d-none" role="alert" id="mensaje"></div>
+    <div class="container contenedor">
+      <h2>Registro</h2>
 
       <form>
           <label>Usuario:</label><br>
@@ -37,7 +38,7 @@
 
           <label>Palabra reservada:</label><br>
           <input type="text" id="keyword" name="keyword"><br><br>
-          <input type="submit" value="Registrarse" id="btnRegister">
+          <input type="submit" value="Registrarse" id="btnRegister" class="btn btn btn-success">
         </form>
         
         </div>
