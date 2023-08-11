@@ -1,0 +1,1 @@
+int = require('init');
