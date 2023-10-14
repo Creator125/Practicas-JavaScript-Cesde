@@ -1,3 +1,32 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+nav{
+  text-align: start;
+  background-color: #b9f0ff;
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+article{
+  background-color: #ffd5a1;
+  padding: 34px;
+}
+
+article section{
+  background-color: #5d8d5d;
+  margin: 40px auto;
+  width: 700px;
+}
+
+
 .App {
   text-align: center;
 }
