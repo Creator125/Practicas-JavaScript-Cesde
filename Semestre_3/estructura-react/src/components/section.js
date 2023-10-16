@@ -1,14 +1,13 @@
 import React from "react";
 
-export const Section = (props) =>{
+export const Section = ({ title, imageSrc, description }) =>{
     return(
         <section>
-            {/* <img src={this.props.img}/> */}
-            <p>Ea et tempor labore sanctus elitr et. 
-                Takimata sanctus ut imperdiet stet 
-                invidunt in at ipsum clita ut invidunt. 
-                Ipsum voluptua ipsum est sit lorem at 
-                lorem stet dolor duis qui sed rebum et diam takimata sit.</p>
+            <img src={imageSrc} alt={title} />
+            <h2>{title}</h2>
+            <p>{description}</p>
         </section>
     );
 }
+
+export default Section;
