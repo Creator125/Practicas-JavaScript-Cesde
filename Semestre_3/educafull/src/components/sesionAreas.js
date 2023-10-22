@@ -1,10 +1,11 @@
 import React from "react";
-import { IconMathFunctionY, IconBook, IconLanguage, IconBarbell, IconDeviceLaptop, IconCode } from '@tabler/icons-react';
+import { IconMathFunctionY, IconBook, IconLanguage, IconBarbell, IconDeviceLaptop, IconCode, IconPencil } from '@tabler/icons-react';
 
 
 export const Areas = (props) => {
     return (
         <div className="materiasSesion">
+            <h2>Materias</h2>
             <div className="materiasSesion">
                 <IconMathFunctionY />
                 <p>Matematicas</p>
@@ -28,6 +29,11 @@ export const Areas = (props) => {
             <div className="materiasSesion">
                 <IconCode/>
                 <p>Programación</p>
+            </div>
+
+            <div className="materiasSesion">
+                <IconPencil/>
+                <p>Artistica</p>
             </div>
         </div>
     );

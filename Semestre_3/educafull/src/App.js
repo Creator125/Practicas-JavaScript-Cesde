@@ -3,6 +3,8 @@ import { Nav } from './components/nav';
 import { Banner } from './components/banner';
 import { Areas } from './components/sesionAreas';
 import { Profes } from './components/secionProfesores';
+import { Testimonios } from './components/secionTestimonios';
+import { Contactos } from './components/sesionContacto';
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <Banner/>
       <Areas/>
       <Profes/>
+      <Testimonios/>
+      <Contactos/>
     </div>
   );
 }

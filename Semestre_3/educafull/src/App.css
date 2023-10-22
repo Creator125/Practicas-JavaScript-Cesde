@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+#menu ul{
+  display: inline-block;
+}
+
+#menu ul li{
+  list-style: none;
+  display: inline-block;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
