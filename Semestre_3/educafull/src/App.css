@@ -1,47 +1,145 @@
+:root{
+  --color-principal: #16ccff;
+  --azul-claro: #baefff;
+  --naranja: #ffa115;
+  --claro: #fff4e0;
+  --oscuro: #00071f;
+  --amarillo: #eeff04;
+}
+
 .App {
   text-align: center;
 }
 
+/*Barra de navegacion*/
+#menu{
+  background-color: var(--color-principal);
+  text-align: left;
+}
+
 #menu ul{
   display: inline-block;
+  
 }
 
 #menu ul li{
   list-style: none;
   display: inline-block;
+  margin: 0 20px;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#menu ul li img{
+  width: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#menu ul li a{
+  color: var(--oscuro);
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#menu ul li a:hover{
+  color: var(--amarillo);
+}
+
+/*Secion del banner*/
+#banner{
+  margin-top: 10px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 500px;
+  background: linear-gradient(#fff1e3, #d4fffd);
+  margin-top: -1px;
 }
 
-.App-link {
-  color: #61dafb;
+#banner .imagen img{
+  height: 40%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#banner .textos{
+  height: 20%;
+}
+
+/*Sesion de areas*/
+.materiasSesion{
+  background-color: var(--naranja);
+  margin-top: -17px;
+}
+
+.materiasSesion .areas,
+.profesoresSesion .profes,
+.testimonioSesion .testimonios,
+.contactoSesion .contact{
+  height: 150px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.materiasSesion .areas .area{
+  width: 110px;
+  height: 110px;
+  padding: 10px 10px;
+  border-radius: 10%;
+  text-align: center;
+  transition: linear 0.20s;
+}
+
+.materiasSesion .areas .area:hover{
+  background-color: var(--amarillo);
+}
+
+
+/*Sesion de profesores*/
+.profesoresSesion .profes{
+  height: 300px;
+}
+
+
+.profesoresSesion .card img{
+  width: 200px;
+  border-radius: 50%;
+}
+
+/*Sesion de testimonios*/
+.testimonioSesion{
+  background-color: var(--azul-claro);
+  height: 400px;
+}
+
+.testimonioSesion .testimonios-usuarios{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.testimonioSesion .cardUsuarios{
+  width: 30%;
+  background-color: var(--claro);
+  border-radius: 5%;
+  overflow: hidden;
+  display: flex
+}
+
+.testimonioSesion .cardUsuarios .info{
+  padding: 5px;
+  text-align: start;
+}
+
+.testimonioSesion .cardUsuarios img{
+  width: 230px;
+}
+
+/*Sesion de contactos*/
+.contactoSesion{
+  background-color: var(--color-principal);
+  margin-top: -17px;
+}
+
+.contactoSesion .contact a{
+  color: var(--oscuro);
+  text-decoration: none;
 }

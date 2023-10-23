@@ -7,23 +7,26 @@ import Profe4 from "../assets/img/profesores/humanNotExist4.jpg";
 
 export const Profes = (props) => {
     return (
-        <div>
+        <div className="profesoresSesion">
             <h2>profesores</h2>
-            <div className="profesoresSesion">
-                <ProfeCard foto= {Profe1} nombre="Andrea"/>
-            </div>
+            <div className="profes">
+                <div>
+                    <ProfeCard foto= {Profe1} nombre="Andrea Hernandes"/>
+                </div>
 
-            <div className="profesoresSesion">
-                <ProfeCard foto= {Profe2} nombre="Pablo"/>
-            </div>
+                <div>
+                    <ProfeCard foto= {Profe2} nombre="Pablo Garcia"/>
+                </div>
 
-            <div className="profesoresSesion">
-                <ProfeCard foto= {Profe3} nombre="Mario"/>
-            </div>
+                <div>
+                    <ProfeCard foto= {Profe3} nombre="Mario Ernandez"/>
+                </div>
 
-            <div className="profesoresSesion">
-                <ProfeCard foto= {Profe4} nombre="Marina"/>
+                <div>
+                    <ProfeCard foto= {Profe4} nombre="Marina Cardona"/>
+                </div>
             </div>
+            
         </div>
         
     );
