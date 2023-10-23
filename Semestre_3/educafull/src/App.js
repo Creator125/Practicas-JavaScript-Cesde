@@ -5,6 +5,7 @@ import { Areas } from './components/sesionAreas';
 import { Profes } from './components/secionProfesores';
 import { Testimonios } from './components/secionTestimonios';
 import { Contactos } from './components/sesionContacto';
+import { Footer } from './components/footer';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Profes/>
       <Testimonios/>
       <Contactos/>
+      <Footer/>
     </div>
   );
 }
