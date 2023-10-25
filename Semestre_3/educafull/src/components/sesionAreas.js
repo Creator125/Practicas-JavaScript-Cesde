@@ -1,10 +1,11 @@
 import React from "react";
+//Impotando iconos del componete Taber Icons-react
 import { IconMathFunctionY, IconBook, IconLanguage, IconBarbell, IconDeviceLaptop, IconCode, IconPencil } from '@tabler/icons-react';
 
-
+//Sescion de areas
 export const Areas = (props) => {
     return (
-        <div className="materiasSesion">
+        <div className="materiasSesion" id="areas">
             <h2>Areas</h2>
             <div className="areas">
                 <div className="area">

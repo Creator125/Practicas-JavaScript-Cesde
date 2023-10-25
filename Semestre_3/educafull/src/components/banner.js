@@ -1,6 +1,7 @@
 import React from "react";
-import EduDigital from "../assets/img/educacion-digital.png"
+import EduDigital from "../assets/img/educacion-digital.png" //Importando imagen
 
+//La sesion que encarga de mostrar la imagen y texto de presesntacion
 export const Banner = (props) => {
     return (
         <div id="banner">

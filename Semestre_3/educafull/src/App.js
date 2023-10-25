@@ -1,4 +1,5 @@
 import './App.css';
+//Importando los componetes creados
 import { Nav } from './components/nav';
 import { Banner } from './components/banner';
 import { Areas } from './components/sesionAreas';
@@ -18,7 +19,7 @@ function App() {
       <Contactos/>
       <Footer/>
     </div>
-  );
+  );//Cargar los componentes que se visualizará en la pagina 
 }
 
 export default App;

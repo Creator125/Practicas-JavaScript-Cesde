@@ -1,5 +1,5 @@
 import React from "react";
-
+//Card de usarios que se mostrará en la sesion de testimonios
 export const UsuarioCard = ({foto, nombre, descripcion}) => {
     return (
         <div className="cardUsuarios">
@@ -15,4 +15,5 @@ export const UsuarioCard = ({foto, nombre, descripcion}) => {
     );
 };
 
-export default UsuarioCard;
+export default UsuarioCard; //Util para exportar los parametos foto, nombrey descripcion
+//Este somponentes será usado varias veces dentro de secionTestimonio

@@ -1,12 +1,14 @@
 import React from "react";
+//Impotando iconos del componete Taber Icons-react
 import { IconBrandFacebookFilled, IconBrandXFilled, IconBrandWhatsapp, IconPhone, IconAt } from '@tabler/icons-react';
 
+//Sesion de contactos
 export const Contactos = (props) =>{
     return (
         <div className="contactoSesion">
-            <h2>Nuestros contactos</h2>
+            <h2>Contactenos</h2>
             
-            <div className="contact">
+            <div className="contact" id="contactos">
                 <a href="#">
                     <IconBrandFacebookFilled/>
                     <p>Facebook</p>
