@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
 const Layout = () => {
@@ -16,7 +17,7 @@ const Layout = () => {
             </ul>
         </nav>
         <hr/>
-        <Outlet />
+        <Outlet/>
     </div>;
 }
 
