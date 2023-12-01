@@ -11,4 +11,5 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'estructura-angular';
+  data = [1,2,3,4,5,6,7]
 }
